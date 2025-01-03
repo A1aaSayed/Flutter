@@ -76,6 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 20),
                 FormTextFieldWidget(
+                  obscure: true,
                   hint: 'Password',
                   onChanged: (data) {
                     password = data;
@@ -90,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       });
                       try {
                         await loginUser();
-                        Navigator.pushNamed(context, ChatScreen.id);
+                        Navigator.pushNamed(context, ChatScreen.id, arguments: email);
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'weak-password') {
                           showSnackBar(context,
