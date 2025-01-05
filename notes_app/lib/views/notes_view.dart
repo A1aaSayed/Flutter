@@ -10,7 +10,7 @@ class NotesView extends StatelessWidget {
       body: const NotesViewBody(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {  },
-        child: IconButton(onPressed: (){}, icon: const Icon(Icons.add)),
+        child: const Icon(Icons.add),
       ),
     );
   }
